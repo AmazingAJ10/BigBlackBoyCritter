@@ -1,6 +1,8 @@
 import info.gridworld.actor.Rock;
 import info.gridworld.actor.Critter;
 import info.gridworld.actor.Actor;
+import info.gridworld.actor.Flower;
+
 //import info.gridworld.grid.Location;
 //import info.gridworld.grid.Grid;
 import java.util.*;
@@ -10,7 +12,11 @@ public class BlackPlagueCritter extends Critter {
   public void processActors(ArrayList<Actor> actors) {
       for(Actor x : actors){
           if (!(x instanceof Rock)) 
-                   x.setColor(Color.BLACK);
+                   x.setColor(Color.MAGENTA);
+           }
+      for(Actor x : actors){
+          if (!(x instanceof Flower)) 
+                   x.setColor(Color.BLUE);
            }
       int n = actors.size(); if (n == 0) return;
       int r = (int) (Math.random() * n);
